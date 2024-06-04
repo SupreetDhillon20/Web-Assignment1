@@ -10,4 +10,4 @@ Responsive design using Tailwind CSS.
 Navigation tabs for easy access to different types of conversions.
 
 Group 1 -
-Created by: Sahilpreet Singh, Kulbir Kaur, Supreet Dhillon, 
+Created by: Damanvir Singh, Sahilpreet Singh, Kulbir Kaur, Supreet Dhillon
