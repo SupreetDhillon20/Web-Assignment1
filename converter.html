@@ -17,11 +17,19 @@
 </head>
 <body class="bg-gray-100">
     <div class="container mx-auto py-8">
-        <nav class="flex justify-center space-x-4 py-4 bg-white shadow-md rounded-md">
-            <a href="#weight" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700" id="tabWeight">Weight</a>
-            <a href="#distance" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700" id="tabDistance">Distance</a>
-            <a href="#temperature" class="px-3 py-2 rounded-md text-sm font-medium text-gray-700" id="tabTemperature">Temperature</a>
-        </nav>
+<!-- Navigation bar -->
+<nav class="max-w-6xl mx-auto flex justify-between items-center py-4 bg-blue-500 shadow-md rounded-md px-4">
+    <div class="flex-none">
+        <!-- Title of the calculator -->
+        <h1 class="text-l pl-7 font-medium text-white">Unit Conversion Calculator</h1>
+    </div>
+    <div class="flex-1 flex justify-end space-x-4">
+        <!-- Navigation links for different conversion tabs -->
+        <a href="#weight" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:underline" id="tabWeight">Weight</a>
+        <a href="#distance" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:underline" id="tabDistance">Distance</a>
+        <a href="#temperature" class="px-3 py-2 rounded-md text-sm font-medium text-white hover:underline" id="tabTemperature">Temperature</a>
+    </div>
+</nav>
 
         <div id="content" class="mt-8 bg-white p-6 shadow-md rounded-md">
             <!-- Weight Conversion Form -->
