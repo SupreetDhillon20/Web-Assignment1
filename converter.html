@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Internal CSS styles -->
     <style>
         .hidden { display: none; }
     </style>
@@ -31,16 +32,19 @@
     </div>
 </nav>
 
+        <!-- Content section -->
         <div id="content" class="mt-8 bg-white p-6 shadow-md rounded-md max-w-6xl mx-auto px-4">
             <!-- Weight Conversion Form -->
             <div id="weight">
                 <h2 class="text-2xl font-bold mb-4">Weight Conversion</h2>
                 <form id="weightForm" class="space-y-4">
                     <div>
+                        <!-- Input weight -->
                         <label for="weightInput" class="block text-sm font-medium text-gray-700">Enter weight (lb or kg):</label>
                         <input type="text" id="weightInput" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
+                        <!-- Dropdown for selecting conversion from -->
                         <label for="weightConvertFrom" class="block text-sm font-medium text-gray-700">Convert from:</label>
                         <select id="weightConvertFrom" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                             <option value="lb">Pounds (lb)</option>
@@ -48,14 +52,17 @@
                         </select>
                     </div>
                     <div>
+                        <!-- Dropdown for selecting conversion to -->
                         <label for="weightConvertTo" class="block text-sm font-medium text-gray-700">Convert to:</label>
                         <select id="weightConvertTo" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                             <option value="kg">Kilograms (kg)</option>
                             <option value="lb">Pounds (lb)</option>
                         </select>
                     </div>
+                    <!-- Button to initiate weight conversion -->
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">Convert</button>
                 </form>
+                <!-- Result of weight conversion -->
                 <div id="weightResult" class="mt-4 text-xl"></div>
             </div>
 
@@ -64,10 +71,12 @@
                 <h2 class="text-2xl font-bold mb-4">Distance Conversion</h2>
                 <form id="distanceForm" class="space-y-4">
                     <div>
+                        <!-- Input distance -->
                         <label for="distanceInput" class="block text-sm font-medium text-gray-700">Enter distance (miles or km):</label>
                         <input type="text" id="distanceInput" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
+                        <!-- Dropdown for selecting conversion from -->
                         <label for="distanceConvertFrom" class="block text-sm font-medium text-gray-700">Convert from:</label>
                         <select id="distanceConvertFrom" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                             <option value="miles">Miles</option>
@@ -75,14 +84,17 @@
                         </select>
                     </div>
                     <div>
+                        <!-- Dropdown for selecting conversion to -->
                         <label for="distanceConvertTo" class="block text-sm font-medium text-gray-700">Convert to:</label>
                         <select id="distanceConvertTo" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                             <option value="km">Kilometers (km)</option>
                             <option value="miles">Miles</option>
                         </select>
                     </div>
+                    <!-- Button to initiate distance conversion -->
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">Convert</button>
                 </form>
+                <!-- Result of distance conversion -->
                 <div id="distanceResult" class="mt-4 text-xl"></div>
             </div>
 
@@ -91,10 +103,12 @@
                 <h2 class="text-2xl font-bold mb-4">Temperature Conversion</h2>
                 <form id="temperatureForm" class="space-y-4">
                     <div>
+                        <!-- Input temperature -->
                         <label for="temperatureInput" class="block text-sm font-medium text-gray-700">Enter temperature (°C or °F):</label>
                         <input type="text" id="temperatureInput" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                     </div>
                     <div>
+                        <!-- Dropdown for selecting conversion from -->
                         <label for="temperatureConvertFrom" class="block text-sm font-medium text-gray-700">Convert from:</label>
                         <select id="temperatureConvertFrom" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                             <option value="c">Celsius (°C)</option>
@@ -102,14 +116,17 @@
                         </select>
                     </div>
                     <div>
+                        <!-- Dropdown for selecting conversion to -->
                         <label for="temperatureConvertTo" class="block text-sm font-medium text-gray-700">Convert to:</label>
                         <select id="temperatureConvertTo" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
                             <option value="f">Fahrenheit (°F)</option>
                             <option value="c">Celsius (°C)</option>
                         </select>
                     </div>
+                    <!-- Button to initiate temperature conversion -->
                     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">Convert</button>
                 </form>
+                <!-- Result of temperature conversion -->
                 <div id="temperatureResult" class="mt-4 text-xl"></div>
             </div>
         </div>
@@ -148,10 +165,13 @@
             }
         };
     };
-        
+
+        <!-- Select all navigation links -->
         const tabs = document.querySelectorAll('nav a');
+        // Select all content sections
         const contentSections = document.querySelectorAll('#content > div');
 
+        <!-- Add event listeners to navigation links --> 
         tabs.forEach(tab => {
             tab.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -167,6 +187,7 @@
             });
         });
 
+        <!-- Event listener of weight conversion form --> 
         document.getElementById('weightForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const input = document.getElementById('weightInput').value.split(',').map(Number);
@@ -177,6 +198,7 @@
             document.getElementById('weightResult').innerText = Array.isArray(result) ? result.join(', ') : result;
         });
 
+        <!-- Event listener of distance conversion form --> 
         document.getElementById('distanceForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const input = document.getElementById('distanceInput').value.split(',').map(Number);
@@ -187,6 +209,7 @@
             document.getElementById('distanceResult').innerText = Array.isArray(result) ? result.join(', ') : result;
         });
 
+        <!-- Event listener of temperature conversion form --> 
         document.getElementById('temperatureForm').addEventListener('submit', (e) => {
             e.preventDefault();
             const input = document.getElementById('temperatureInput').value.split(',').map(Number);
