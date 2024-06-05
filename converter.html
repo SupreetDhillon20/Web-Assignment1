@@ -160,6 +160,8 @@
                     section.classList.add('hidden');
                     if (section.id === targetId) {
                         section.classList.remove('hidden');
+                        <!-- Reset form when tab is clicked -->
+                        resetForm(section);
                     }
                 });
             });
